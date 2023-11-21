@@ -454,15 +454,18 @@ def _tf_repositories():
 
     tf_http_archive(
         name = "com_google_protobuf",
-        patch_file = ["//third_party/protobuf:protobuf.patch"],
-        sha256 = "cfcba2df10feec52a84208693937c17a4b5df7775e1635c1e3baffc487b24c9b",
-        strip_prefix = "protobuf-3.9.2",
+        #patch_file = ["//third_party/protobuf:protobuf.patch"],
+        #sha256 = "cfcba2df10feec52a84208693937c17a4b5df7775e1635c1e3baffc487b24c9b",
+        sha256 = "0cbdc9adda01f6d2facc65a22a2be5cecefbefe5a09e5382ee8879b522c04441",
+        #strip_prefix = "protobuf-3.9.2",
+        strip_prefix = "protobuf-3.15.8",
         system_build_file = "//third_party/systemlibs:protobuf.BUILD",
         system_link_files = {
             "//third_party/systemlibs:protobuf.bzl": "protobuf.bzl",
             "//third_party/systemlibs:protobuf_deps.bzl": "protobuf_deps.bzl",
         },
-        urls = tf_mirror_urls("https://github.com/protocolbuffers/protobuf/archive/v3.9.2.zip"),
+        #urls = tf_mirror_urls("https://github.com/protocolbuffers/protobuf/archive/v3.15.8.zip"),
+        urls = tf_mirror_urls("https://mirrors.tencent.com/github.com/protocolbuffers/protobuf/archive/v3.15.8.tar.gz"),
     )
 
     tf_http_archive(
